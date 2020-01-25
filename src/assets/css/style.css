@@ -1,0 +1,74 @@
+.imagem-carrossel, .imagem-carrossel-1, .imagem-carrossel-3, .imagem-carrossel-4, .imagem-carrossel-7 {
+    object-fit: cover;
+    object-position: 0 0%;
+    height: 600px;
+}
+
+.imagem-carrossel-1 {
+    object-position: 0 10%;
+}
+
+.imagem-carrossel-3 {
+    object-position: 0 30%;
+}
+
+.imagem-carrossel-4 {
+    object-position: 0 40%;
+}
+
+.imagem-carrossel-7 {
+    object-position: 0 70%;
+}
+
+.heroinas {
+    font-family: 'Kaushan Script', cursive;
+    /* font-family: 'Dancing Script', cursive; */
+}
+
+.nome-da-loja {
+    color: rgb(204, 0, 0) !important;
+    font-size: 2em;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: bold !important;
+    transition: 1s color !important;
+}
+
+.nome-da-loja:hover {
+    color: rgb(156, 0, 0) !important;
+}
+
+.about > h1 {
+    font-size: 2em;
+    color: darkred;
+}
+
+h1 {
+    font-family: 'Montserrat', cursive;
+}
+
+.card-heroina {
+    max-width: 18rem;
+    border: 1.5px solid darkred;
+    transition: 1s transform, border-color;
+}
+
+.card-heroina:hover {
+    transform: scale(1.05);
+    border-color: rgb(156, 0, 0);
+}
+
+.img-heroina {
+    object-fit: cover;
+    height: 200px;
+}
+
+.botao-heroina {
+    background-color: rgb(204, 0, 0);
+    color: white;
+    transition: 1s background-color, color;
+}
+
+.botao-heroina:hover {
+    color: white;
+    background-color: rgb(156, 0, 0);
+}
