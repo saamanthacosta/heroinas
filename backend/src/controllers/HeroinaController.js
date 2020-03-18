@@ -16,11 +16,13 @@ module.exports = {
     },
 
     async store(request, response) {
-        const { nome, personalidade, localDeAtuacao, grupos, fotos, amigos, inimigos, poderes, fraquezas } = request.body;
+        const { nome, nomeCompleto, codinome, personalidade, terraNatal, especie, editora, 
+            grupos, fotos, amigos, inimigos, poderes, fraquezas } = request.body;
 
         let heroina = await Heroina.findOne({ nome });
 
         if (!heroina) {
+            const codinomeArray = parseStringAsArray(codinome);
             const gruposArray = parseStringAsArray(grupos);
             const fotosArray = parseStringAsArray(fotos);
             const amigosArray = parseStringAsArray(amigos);
@@ -30,7 +32,11 @@ module.exports = {
             
             heroina = await Heroina.create({
                 nome,
-                localDeAtuacao,
+                codinome: codinomeArray,
+                nomeCompleto,
+                editora,
+                especie,
+                terraNatal,
                 personalidade,
                 amigos: amigosArray,
                 inimigos: inimigosArray,
@@ -43,12 +49,15 @@ module.exports = {
 
         return response.json(heroina);
     },
+
     async update(request, response) {
-        const { _id, nome, personalidade, localDeAtuacao, grupos, fotos, amigos, inimigos, poderes, fraquezas } = request.body;
+        const { _id, nome, nomeCompleto, codinome, personalidade, terraNatal, especie, editora, 
+            grupos, fotos, amigos, inimigos, poderes, fraquezas } = request.body;
 
         let heroina = await Heroina.findOne({ _id });
 
         if (heroina) {
+            const codinomeArray = parseStringAsArray(codinome);
             const gruposArray = parseStringAsArray(grupos);
             const fotosArray = parseStringAsArray(fotos);
             const amigosArray = parseStringAsArray(amigos);
@@ -58,8 +67,12 @@ module.exports = {
             
             heroina = await Heroina.updateOne({
                 nome,
-                localDeAtuacao,
+                codinome: codinomeArray,
+                nomeCompleto,
+                terraNatal,
                 personalidade,
+                especie,
+                editora,
                 amigos: amigosArray,
                 inimigos: inimigosArray,
                 poderes: poderesArray,

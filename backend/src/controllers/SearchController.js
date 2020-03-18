@@ -2,6 +2,17 @@ const Heroina = require('../models/Heroina');
 const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
+    async editora(request, response) {
+        const { editora } = request.query;
+
+        const heroinas = await Heroina.find({
+            editora: {
+                $in: editora
+            }
+        })
+
+        return response.json({ heroinas });
+    },
     async fraquezas(request, response) {
         const { fraquezas } = request.query;
 

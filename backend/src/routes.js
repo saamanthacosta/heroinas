@@ -13,5 +13,6 @@ routes.delete('/heroinas/:id', HeroinaController.destroy);
 routes.get('/buscaPorFraquezas', SearchController.fraquezas);
 routes.get('/buscaPorPoderes', SearchController.poderes);
 routes.get('/buscaPorGrupos', SearchController.grupos);
+routes.get('/buscarPorEditora', SearchController.editora);
 
 module.exports = routes;
